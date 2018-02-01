@@ -16,7 +16,6 @@ import android.view.Menu;
 import android.view.MenuItem;
 
 import org.wfp.cats.fragment.DispatchFragment;
-import org.wfp.cats.fragment.ReceivingFormFagment;
 import org.wfp.cats.fragment.ReceivingFragment;
 import org.wfp.cats.fragment.SettingFragment;
 
@@ -44,6 +43,12 @@ public class MainActivity extends AppCompatActivity {
 
     private FragmentManager mFragmentManager;
 
+    private Fragment mReceivingFragment;
+
+    private Fragment mDispatchFragment;
+
+    private Fragment mSettingsFragment;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
@@ -60,6 +65,16 @@ public class MainActivity extends AppCompatActivity {
         mViewPager.setAdapter(new SectionsPagerAdapter(mFragmentManager));
 
         tabLayout.setupWithViewPager(mViewPager);
+
+
+        if(savedInstanceState == null) {
+
+            mReceivingFragment = ReceivingFragment.getInstance();
+
+            mDispatchFragment = DispatchFragment.getInstance();
+
+            mSettingsFragment = SettingFragment.getInstance();
+        }
 
 
         FloatingActionButton fab = findViewById(R.id.fab);
@@ -96,8 +111,6 @@ public class MainActivity extends AppCompatActivity {
 
     private class SectionsPagerAdapter extends FragmentPagerAdapter {
 
-        private Fragment mFragmentAtPos0;
-
         SectionsPagerAdapter(FragmentManager fm) {
             super(fm);
         }
@@ -111,18 +124,11 @@ public class MainActivity extends AppCompatActivity {
         public Fragment getItem(int position) {
             switch (position) {
                 case RECEIVING_FRAGMENT_POSITION:
-                    if(mFragmentAtPos0 == null) {
-                        mFragmentAtPos0 = ReceivingFragment.newInstance(() -> {
-                            mFragmentManager.beginTransaction().remove(mFragmentAtPos0).commit();
-                            mFragmentAtPos0 = new ReceivingFormFagment();
-                            notifyDataSetChanged();
-                        });
-                    }
-                    return mFragmentAtPos0;
+                    return mReceivingFragment;
                 case DISPATCH_FRAGMENT_POSITION:
-                    return new DispatchFragment();
+                    return mDispatchFragment;
                 case SETTINGS_FRAGMENT_POSITION:
-                    return new SettingFragment();
+                    return mSettingsFragment;
             }
 
             return new ReceivingFragment();
@@ -140,18 +146,13 @@ public class MainActivity extends AppCompatActivity {
             }
             return getString(R.string.receiving);
         }
-
-        @Override
-        public int getItemPosition(Object object) {
-            if(object instanceof ReceivingFragment && mFragmentAtPos0 instanceof ReceivingFormFagment) {
-                return POSITION_NONE;
-            }
-            return POSITION_UNCHANGED;
-        }
     }
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
+        if(mReceivingFragment != null) {
+            mReceivingFragment.onActivityResult(requestCode, resultCode, data);
+        }
     }
 }

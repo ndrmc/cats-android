@@ -3,11 +3,26 @@
 
     <string name="dummy_button">Dummy Button</string>
     <string name="dummy_content">DUMMY\nCONTENT</string>
-    <string name="title_activity_main">MainActivity</string>
+    <string name="title_activity_main">Cats</string>
     <string name="action_settings">Settings</string>
     <string name="section_format">Hello World from section: %1$d</string>
     <string name="receiving">Receiving</string>
     <string name="dispatch">Dispatch</string>
     <string name="settings">Settings</string>
     <string name="scan">Please scan project code</string>
+    <string name="title_activity_receiving_form">Receiving Form</string>
+    <string name="waybill_label">Waybill</string>
+    <string name="grn_label">GRN</string>
+    <string name="project_code">Project Code</string>
+    <string name="commodity_type">Commodity</string>
+    <string name="uom">UOM</string>
+    <string name="quantity">Qty</string>
+    <string name="transporter">Transporter</string>
+    <string name="plate_number">Plate #</string>
+    <string name="project_info">Project Info</string>
+    <string name="enter_email">Enter Email</string>
+    <string name="select_commodity">Select Commodity</string>
+    <string name="receiving_details">Receiving Details</string>
+    <string name="pick_uom">Pick a unit of measure</string>
+    <string name="pick_transporter">Pick a transporter</string>
 </resources>

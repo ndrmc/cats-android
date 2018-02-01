@@ -10,4 +10,8 @@ public class DispatchFragment extends Fragment {
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
     }
+
+    public static Fragment getInstance() {
+        return new DispatchFragment();
+    }
 }
