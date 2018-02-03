@@ -1,8 +1,6 @@
 package org.wfp.cats;
 
 import android.content.Intent;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -18,7 +16,6 @@ import android.view.MenuItem;
 import org.wfp.cats.fragment.DispatchFragment;
 import org.wfp.cats.fragment.ReceivingFragment;
 import org.wfp.cats.fragment.SettingFragment;
-
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -75,15 +72,6 @@ public class MainActivity extends AppCompatActivity {
 
             mSettingsFragment = SettingFragment.getInstance();
         }
-
-
-        FloatingActionButton fab = findViewById(R.id.fab);
-
-        fab.setOnClickListener(view -> {
-            Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                    .setAction("Action", null).show();
-        });
-
     }
 
 

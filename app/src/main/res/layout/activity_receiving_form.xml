@@ -1,14 +1,53 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:layout_height="match_parent">
 
-    <android.support.v7.widget.RecyclerView
-        android:id="@+id/formsRecycler"
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:descendantFocusability="beforeDescendants" />
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
 
-</LinearLayout>
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/formsRecycler"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:descendantFocusability="beforeDescendants" />
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_marginTop="@dimen/default_padding"
+            android:layout_width="match_parent"
+            android:layout_below="@id/formsRecycler"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/save_form"
+                android:layout_width="0dp"
+                android:maxWidth="50dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/large_padding"
+                android:textAlignment="center"
+                android:text="@string/save_form"
+                android:background="@drawable/curved_primary_background"
+                android:layout_gravity="center_horizontal" />
+
+            <TextView
+                android:id="@+id/scan_qr_code"
+                android:layout_width="0dp"
+                android:maxWidth="50dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/large_padding"
+                android:textAlignment="center"
+                android:text="@string/scan"
+                android:background="@drawable/curved_secondary_background"
+                android:layout_gravity="center_horizontal" />
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+ </ScrollView>

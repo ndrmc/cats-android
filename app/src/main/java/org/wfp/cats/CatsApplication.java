@@ -19,4 +19,6 @@ public class CatsApplication extends Application {
     public BoxStore getBoxStore() {
         return boxStore;
     }
+
+
 }

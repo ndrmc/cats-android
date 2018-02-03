@@ -14,9 +14,77 @@
         }
       ],
       "relations": []
+    },
+    {
+      "id": "2:8324872278765879017",
+      "lastPropertyId": "11:1716963151128983768",
+      "name": "Received",
+      "properties": [
+        {
+          "id": "1:7868124601586626529",
+          "name": "id"
+        },
+        {
+          "id": "2:1748474903268576834",
+          "name": "projectCode"
+        },
+        {
+          "id": "3:1988014160078710978",
+          "name": "commodityType"
+        },
+        {
+          "id": "4:3264179463038301801",
+          "name": "GRN"
+        },
+        {
+          "id": "5:654583691969836667",
+          "name": "wayBill"
+        },
+        {
+          "id": "6:5242572597333922281",
+          "name": "uom"
+        },
+        {
+          "id": "7:4929383851953287464",
+          "name": "quantity"
+        },
+        {
+          "id": "8:3765775873345494770",
+          "name": "transporter"
+        },
+        {
+          "id": "9:4376031816169851971",
+          "name": "receivingDate"
+        },
+        {
+          "id": "10:8043049437641464567",
+          "name": "hub"
+        },
+        {
+          "id": "11:1716963151128983768",
+          "name": "warehouse"
+        }
+      ],
+      "relations": []
+    },
+    {
+      "id": "3:5451031555628033808",
+      "lastPropertyId": "2:4704210268694074052",
+      "name": "Transporter",
+      "properties": [
+        {
+          "id": "1:5798853921396370181",
+          "name": "name"
+        },
+        {
+          "id": "2:4704210268694074052",
+          "name": "id"
+        }
+      ],
+      "relations": []
     }
   ],
-  "lastEntityId": "1:7980198492918443922",
+  "lastEntityId": "3:5451031555628033808",
   "lastIndexId": "0:0",
   "lastRelationId": "0:0",
   "lastSequenceId": "0:0",
